@@ -16,22 +16,18 @@ public class Eva extends Page {
      * @return - список элементотов ввиде строки
      */
     public String getEva() {
-        // имя страницы
-        int name = 0;
-        //создаем список в который будем помещать наши элементы
-        List<EvaCatalog> evaCatalogList = new ArrayList<>();
-        //указываем с какого места нашей html страницы будем вытягивать элементы
+        // нам понадобиться строка которую будем возврящать
+        String info = "";
+        //указываем с какого места нашей html страницы будем вытягивать элемент
         Elements elements = getDocument().getElementsByClass("flipmagazine MINI").select("div > img");
-
-        //в цикле будем доставать наши элементы, указывая с какого поля (select) и какими параметрами
-        for (Element element : elements) {
+        //в цикле будем доставать нашb элементы
+        for (int i = 0; i < elements.size(); i++) {
             //указываем, что нам необходим элемент страници с атрибутом src - это и есть url каринки, усанавливаем ему имя img
-            String img = element.attr("src");
-            //имя сраницы считаем по порядку, увеличивая на единицу
-            name++;
-            //попарно помещаем в List наши элементы
-            evaCatalogList.add(new EvaCatalog(img, name));
+            String img = elements.attr("src");
+            // добавляем в строку наши элементы, именем будет i из цикла начиная с 1
+            // и представляем наши элемменты в стиле Markdown
+            info += "\n[каталог Ева стр: " + (i + 1) + "](" + img + ")\n";
         }
-        return String.valueOf(evaCatalogList);
+        return info;
     }
 }
