@@ -1,12 +1,16 @@
+package org.telegram.uasales.bot.store;
+
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.telegram.uasales.bot.product.EpicentrProducts;
+import org.telegram.uasales.bot.Page;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Epicentr extends Page {
     // при вызове конструктора происодит соединение к нашей странице
-    protected Epicentr() {
+    public Epicentr() {
         connect("https://epicentrk.ua/offers");
     }
 

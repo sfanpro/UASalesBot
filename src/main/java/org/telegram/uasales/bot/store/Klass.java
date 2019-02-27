@@ -1,5 +1,9 @@
+package org.telegram.uasales.bot.store;
+
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.telegram.uasales.bot.product.KlassProducts;
+import org.telegram.uasales.bot.Page;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +11,7 @@ import java.util.List;
 public class Klass extends Page {
 
     // при вызове конструктора происодит соединение к нашей странице
-    protected Klass() {
+    public Klass() {
         connect("https://klassmarket.ua/aktsii/katalog-aktsionnykh-tovarov");
     }
 

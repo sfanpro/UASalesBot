@@ -1,7 +1,10 @@
+package org.telegram.uasales.bot;
+
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+import org.telegram.uasales.bot.store.*;
 
 import java.io.IOException;
 
@@ -24,7 +27,7 @@ public class Bot extends TelegramLongPollingBot {
         try {
             sendMessage.setText(input(update.getMessage().getText()));
         } catch (IOException e) {
-            e.printStackTrace();
+            e.printStackTrace(); //for future logging should be here
         }
         //отвечаем на полученное сообщение, сообщения будем осылать в стиле Markdown, для корректного
         //отображения ссылок и применения различных стилей оформления шрифта
@@ -48,15 +51,15 @@ public class Bot extends TelegramLongPollingBot {
             return "Привіт ДРУЖЕ! Надішли: класс, эпицентр або ева; чи 1, 2, 3";
         }
         if (msg.contains("класс") || msg.contains("1")) {
-            // инициализируем объект класса Klass и возвращаем значения полученные в методе getKlass()
+            // инициализируем объект класса org.telegram.uasales.bot.store.Klass и возвращаем значения полученные в методе getKlass()
             return new Klass().getKlass();
         }
         if (msg.contains("эпицентр") || msg.contains("2")) {
-            // инициализируем объект класса Epicentr и возвращаем значения полученные в методе getEpicentr()
+            // инициализируем объект класса org.telegram.uasales.bot.store.Epicentr и возвращаем значения полученные в методе getEpicentr()
             return new Epicentr().getEpicentr();
         }
         if (msg.contains("ева") || msg.contains("3")) {
-            // инициализируем объект класса Eva ивозвращаем значения полученные в методе getEva()
+            // инициализируем объект класса org.telegram.uasales.bot.store.Eva ивозвращаем значения полученные в методе getEva()
             return new Eva().getEva();
         }
         return "Щось не те! \nкласс, эпицентр або ева; чи 1, 2, 3";

@@ -34,7 +34,7 @@
                     <assembleDirectory>target</assembleDirectory>
                     <programs>
                         <program>
-                            <mainClass>Main</mainClass>
+                            <mainClass>org.telegram.uasales.bot.Main</mainClass>
                             <name>UASalesBot</name>
                         </program>
                     </programs>

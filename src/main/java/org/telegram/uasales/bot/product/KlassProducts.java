@@ -1,3 +1,5 @@
+package org.telegram.uasales.bot.product;
+
 /**
  * Этот класс будет шаблоном по которому будем добавлять полученные элементы в klassProductsList
  */
