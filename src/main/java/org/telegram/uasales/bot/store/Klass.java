@@ -12,7 +12,7 @@ public class Klass extends Page {
 
     // при вызове конструктора происодит соединение к нашей странице
     public Klass() {
-        connect("https://klassmarket.ua/aktsii/katalog-aktsionnykh-tovarov");
+        super.connect("https://klassmarket.ua/aktsii/katalog-aktsionnykh-tovarov");
     }
 
     /**

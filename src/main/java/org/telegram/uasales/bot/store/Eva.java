@@ -6,7 +6,7 @@ import org.telegram.uasales.bot.Page;
 public class Eva extends Page {
     // при вызове конструктора происодит соединение к нашей странице
     public Eva() {
-        connect("https://eva.ua/promotion/catalog/");
+        super.connect("https://eva.ua/promotion/catalog/");
     }
 
     /**

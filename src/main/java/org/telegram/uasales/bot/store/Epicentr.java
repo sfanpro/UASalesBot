@@ -11,7 +11,7 @@ import java.util.List;
 public class Epicentr extends Page {
     // при вызове конструктора происодит соединение к нашей странице
     public Epicentr() {
-        connect("https://epicentrk.ua/offers");
+        super.connect("https://epicentrk.ua/offers");
     }
 
     /**
